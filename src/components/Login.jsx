@@ -5,7 +5,7 @@ function Login() {
     const [name, setName] = useState();
     const [email, setEmail] = useState();
     const [password, setPassword] = useState();
-    const [fill, setFill] = useState("Please Fill The Form")
+    const [fill, setFill] = useState("Please fill the form")
 
 
     const submitForm = (e) => {
@@ -16,7 +16,7 @@ function Login() {
             password: password
         }
         console.log(newEntry);
-        setFill("Form Has Been Submited")
+        setFill("Form has been submited")
     }
     const [mover, setMover] = useState(false)
     function handalMouseOver() {
@@ -34,7 +34,7 @@ function Login() {
                 "rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px"
 
         }}>
-            <p>  {fill}</p>
+            <p style={{ marginLeft: "8px", color: "red" }}>  {fill}</p>
             <h1 style={{ marginBottom: "20px", textAlign: "center" }} >Login Form</h1>
             <form onSubmit={(e) => { submitForm(e) }}>
                 <input onChange={(e) => { setName(e.target.value) }} style={{ display: "block", width: "100%", borderRadius: "16px", borderColor: "white" }} type="text" placeholder='Username' />
