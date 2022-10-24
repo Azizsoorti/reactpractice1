@@ -6,8 +6,8 @@ function Login() {
     const [email, setEmail] = useState();
     const [password, setPassword] = useState();
 
-  
- 
+
+
     const submitForm = (e) => {
         e.preventDefault();
         var newEntry = {
@@ -17,6 +17,14 @@ function Login() {
         }
         console.log(newEntry);
     }
+    const [mover, setMover] = useState(false)
+    function handalMouseOver() {
+        setMover(true)
+    }
+    function handalMouseOut() {
+        setMover(false)
+    }
+
 
     return (
         <div style={{
@@ -28,10 +36,13 @@ function Login() {
 
             <h1 style={{ marginBottom: "20px", textAlign: "center" }} >Login Form</h1>
             <form onSubmit={(e) => { submitForm(e) }}>
-                <input onChange={(e) => { setName(e.target.value) }} style={{ display: "block",  width: "100%", borderRadius: "16px", borderColor: "white" }} type="text" placeholder='Username' />
+                <input onChange={(e) => { setName(e.target.value) }} style={{ display: "block", width: "100%", borderRadius: "16px", borderColor: "white" }} type="text" placeholder='Username' />
                 <input onChange={(e) => { setEmail(e.target.value) }} style={{ display: "block", margin: "30px 0", width: "100%", borderRadius: "16px", borderColor: "white" }} type="text" placeholder='Email' />
                 <input onChange={(e) => { setPassword(e.target.value) }} style={{ display: "block", width: "100%", borderRadius: "16px", borderColor: "white" }} type="text" placeholder='Password' />
-                <button type='Submit' style={{ background: "skyblue", borderRadius: "16px", width: "70%", borderColor: "skyblue", color: "white", margin: "70px 15%" }}>Submit</button>
+                <button
+                    onMouseOver={handalMouseOver}
+                    onMouseOut={handalMouseOut}
+                    type='Submit' style={{ backgroundColor: mover ? "black" : "skyblue", borderRadius: "16px", width: "70%", borderColor: "skyblue", color: "white", margin: "70px 15%" }}>Submit</button>
             </form>
         </div>
     )
