@@ -7,7 +7,7 @@ function Login() {
     const [password, setPassword] = useState();
 
   
-    const [allEntry, setAllEntry] = useState();
+ 
     const submitForm = (e) => {
         e.preventDefault();
         var newEntry = {
